@@ -49,7 +49,7 @@ void AsmObjectCodePane::setObjectCode(QList<int> objectCode)
     QString objectCodeString = "";
     for (int i = 0; i < objectCode.length(); i++) {
         objectCodeString.append(QString("%1").arg(objectCode[i], 2, 16, QLatin1Char('0')).toUpper());
-        objectCodeString.append((i % 16) == 15 ? '\n' : ' ');
+        objectCodeString.append((i % 3) == 2 ? '\n' : ' ');
     }
     objectCodeString.append("zz");
     ui->plainTextEdit->clear();
@@ -61,7 +61,7 @@ void AsmObjectCodePane::setObjectCode(QVector<quint8> objectCode)
     QString objectCodeString = "";
     for (int i = 0; i < objectCode.length(); i++) {
         objectCodeString.append(QString("%1").arg(objectCode[i], 2, 16, QLatin1Char('0')).toUpper());
-        objectCodeString.append((i % 16) == 15 ? '\n' : ' ');
+        objectCodeString.append((i % 3) == 2 ? '\n' : ' ');
     }
     objectCodeString.append("zz");
     ui->plainTextEdit->clear();
